@@ -56,9 +56,14 @@ def number_to_words(number):
 # Usage example
 while True :
     user_number = input('Give me a number with max 12 digit:  ')
-    if len(user_number) >= 13 :
+    if len(user_number) > 12:
         print('Sorry, to many digit. Try again')
         continue
+    if not user_number.isdigit():
+        print('Sorry, wrong input. Try again')
+        continue
+    if user_number == '0':
+        print('zero')
     else :        
         print(number_to_words(int(user_number)))
         break
